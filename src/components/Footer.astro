@@ -1,0 +1,16 @@
+---
+interface Props {
+  isErrorPage?: boolean;
+}
+
+const { isErrorPage = false } = Astro.props;
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span data-current-year>2026</span> Pedro Ivo Vasconcelos.</p>
+    {!isErrorPage && (
+      <a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a>
+    )}
+  </div>
+</footer>
