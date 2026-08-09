@@ -2,7 +2,7 @@
 
 Site estático de Pedro Ivo Vasconcelos reconstruído em Astro 5. A página apresenta produtos e áreas de atuação, inclui tema claro/escuro persistente, metadados estruturados, rota 404 e navegação com o `ClientRouter`/View Transitions do Astro.
 
-Este snapshot foi preparado para revisão no repositório público `pedroivovasconcelos/pedroivovasconcelos.github.io`. O domínio canônico configurado é `https://pedroivovasconcelos.github.io`, mas GitHub Pages e qualquer outro deploy permanecem desativados até aprovação explícita posterior.
+Este snapshot foi preparado para revisão no repositório público `pedroivovasconcelos/pedroivovasconcelos.github.io`. O domínio canônico configurado é `https://pedroivovasconcelos.github.io`. O GitHub ativou Pages automaticamente para esse nome reservado, mas o conteúdo Astro deste PR só pode ser publicado após merge em `main` ou despacho manual autorizado.
 
 ## Estrutura
 
@@ -31,14 +31,14 @@ npm run check
 
 O comando gera o site estático em `dist/` e executa as duas suítes. Ele valida estrutura, metadados, acessibilidade básica, ClientRouter e persistência de tema no artefato compilado; não substitui uma revisão visual em navegadores reais.
 
-## Publicação futura
+## Publicação controlada
 
-O workflow `.github/workflows/quality.yml` apenas executa `npm run check`; ele não configura Pages, não monta artefato de deploy e não publica o site. Uma eventual publicação exige uma mudança separada, revisada e explicitamente autorizada. Antes dela:
+O workflow `.github/workflows/quality.yml` continua executando `npm run check` em pull requests sem publicar nada. O workflow separado `.github/workflows/deploy-pages.yml` não responde a pull requests: ele monta e publica o artefato apenas em `push` para `main` ou `workflow_dispatch`. Portanto, enquanto este PR permanecer aberto, seu conteúdo não chega ao endereço público. Antes de merge ou despacho manual:
 
 1. confirmar que o endereço canônico, o sitemap e os links públicos estão corretos;
 2. revisar conteúdo e privacidade;
-3. decidir se e como GitHub Pages será configurado;
-4. autorizar explicitamente merge e publicação.
+3. revisar os gates do PR e as actions fixadas por SHA;
+4. autorizar explicitamente merge ou despacho manual e a consequente publicação.
 
 ## Limites de privacidade
 

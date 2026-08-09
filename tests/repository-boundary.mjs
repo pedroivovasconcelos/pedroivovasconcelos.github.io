@@ -18,18 +18,32 @@ test('public snapshot excludes local orchestration and request artifacts', () =>
   }
 });
 
-test('workflow is CI-only and every external action is pinned by SHA', () => {
-  const workflow = read('.github/workflows/quality.yml');
-  assert.doesNotMatch(workflow, /deploy-pages|configure-pages|upload-pages-artifact/);
-  const actionUses = workflow.match(/^\s*- uses:\s+.+$/gm) || [];
-  assert.ok(actionUses.length >= 2);
+test('review CI and Pages deployment have separate, least-surprise triggers', () => {
+  const quality = read('.github/workflows/quality.yml');
+  const deployment = read('.github/workflows/deploy-pages.yml');
+
+  assert.match(quality, /^\s{2}pull_request:\s*$/m);
+  assert.doesNotMatch(quality, /deploy-pages|configure-pages|upload-pages-artifact/);
+  assert.doesNotMatch(deployment, /^\s{2}pull_request:\s*$/m);
+  assert.match(deployment, /^\s{2}push:\s*$/m);
+  assert.match(deployment, /^\s{4}branches:\s*\[main\]\s*$/m);
+  assert.match(deployment, /^\s{2}workflow_dispatch:\s*$/m);
+  assert.match(deployment, /^\s{2}contents:\s*read\s*$/m);
+  assert.match(deployment, /^\s{2}pages:\s*write\s*$/m);
+  assert.match(deployment, /^\s{2}id-token:\s*write\s*$/m);
+  assert.match(deployment, /^\s{2}group:\s*pages\s*$/m);
+  assert.match(deployment, /^\s{6}name:\s*github-pages\s*$/m);
+
+  const actionUses = `${quality}\n${deployment}`.match(/^\s+(?:-\s+)?uses:\s+.+$/gm) || [];
+  assert.equal(actionUses.length, 7);
   for (const line of actionUses) {
     assert.match(line, /@[0-9a-f]{40}(?:\s|$)/, `action is not SHA-pinned: ${line.trim()}`);
   }
 });
 
-test('inventory records the public privacy and no-deploy boundary', () => {
+test('inventory records the public privacy and controlled-deploy boundary', () => {
   const inventory = read('SNAPSHOT_INVENTORY.md');
   assert.match(inventory, /Não inclui e-mail, telefone, localização exata/);
-  assert.match(inventory, /GitHub Pages permanece desativado/);
+  assert.match(inventory, /não executa em pull requests/);
+  assert.match(inventory, /merge ou despacho manual/);
 });
