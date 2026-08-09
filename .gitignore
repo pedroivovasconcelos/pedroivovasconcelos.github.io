@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+.agents/
+/ORIGINAL_REQUEST.md
+/TEST_*.md
+*.log
+.env
+.env.*
+!.env.example

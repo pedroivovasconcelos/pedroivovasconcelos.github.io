@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Página não encontrada — Pedro Ivo Vasconcelos"
+  description="A página solicitada não foi encontrada no portfólio de Pedro Ivo Vasconcelos."
+  isErrorPage={true}
+>
+  <main class="error-main" id="conteudo">
+    <div class="container">
+      <section class="error-card" aria-labelledby="error-title">
+        <p class="error-code">Erro 404</p>
+        <h1 id="error-title">Essa rota ainda não existe.</h1>
+        <p>
+          O endereço pode ter mudado ou nunca ter feito parte deste portfólio.
+          A página inicial continua disponível.
+        </p>
+        <a class="button button-primary" href="/">Voltar para o início</a>
+      </section>
+    </div>
+  </main>
+</Layout>

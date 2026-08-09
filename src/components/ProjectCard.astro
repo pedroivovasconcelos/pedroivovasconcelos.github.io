@@ -1,0 +1,25 @@
+---
+interface Props {
+  index: string;
+  type: string;
+  title: string;
+  description: string;
+  linkHref: string;
+  linkText: string;
+  featured?: boolean;
+}
+
+const { index, type, title, description, linkHref, linkText, featured = false } = Astro.props;
+---
+
+<article class={`project-card ${featured ? 'project-card-featured' : ''}`}>
+  <div class="project-card-header">
+    <span class="project-index" aria-hidden="true">{index}</span>
+    <span class="project-type">{type}</span>
+  </div>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a class="project-link" href={linkHref}>
+    {linkText} <span aria-hidden="true">↗</span>
+  </a>
+</article>

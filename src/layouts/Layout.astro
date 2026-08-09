@@ -1,0 +1,92 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  isErrorPage?: boolean;
+}
+
+const {
+  title,
+  description = "Portfólio de Pedro Ivo Vasconcelos: IA aplicada, automação, dados e produtos digitais desenvolvidos sob o guarda-chuva Quantorin.",
+  isErrorPage = false
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {isErrorPage && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#0b1730" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- OpenGraph Metadata -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Pedro Ivo Vasconcelos" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    {!isErrorPage && (
+      <script type="application/ld+json" is:inline>
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Pedro Ivo Vasconcelos",
+          "url": "https://pedroivovasconcelos.github.io/",
+          "sameAs": [
+            "https://www.linkedin.com/in/pedro-ivo-vasconcelos-bb4632a5/"
+          ],
+          "knowsAbout": [
+            "Inteligência artificial",
+            "Automação",
+            "Dados",
+            "Produtos digitais"
+          ]
+        }
+      </script>
+    )}
+
+    <!-- Astro View Transitions Client Router -->
+    <ClientRouter />
+
+    <!-- Synchronous Inline FOUC Prevention Script -->
+    <script is:inline>
+      (function () {
+        const STORAGE_KEY = 'pedro-ivo-theme';
+        function readTheme() {
+          try {
+            const val = localStorage.getItem(STORAGE_KEY);
+            if (val === 'light' || val === 'dark') return val;
+          } catch (e) {}
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', readTheme());
+      })();
+    </script>
+  </head>
+  <body class={isErrorPage ? "error-page" : ""}>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <Header isErrorPage={isErrorPage} />
+    <slot />
+    <Footer isErrorPage={isErrorPage} />
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>
