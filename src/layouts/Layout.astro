@@ -20,6 +20,7 @@ const {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const isPt = lang.startsWith("pt");
+const isHome = Astro.url.pathname === "/" || Astro.url.pathname === "" || Astro.url.pathname === "/pt-br" || Astro.url.pathname === "/pt-br/";
 ---
 
 <!doctype html>
@@ -34,10 +35,14 @@ const isPt = lang.startsWith("pt");
     <meta name="color-scheme" content="light dark" />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- Alternate hreflang tags -->
-    <link rel="alternate" hreflang="en" href="https://pedroivovasconcelos.github.io/" />
-    <link rel="alternate" hreflang="pt-BR" href="https://pedroivovasconcelos.github.io/pt-br/" />
-    <link rel="alternate" hreflang="x-default" href="https://pedroivovasconcelos.github.io/" />
+    {isHome && (
+      <>
+        <!-- Alternate hreflang tags for homepage bilingual parity -->
+        <link rel="alternate" hreflang="en" href="https://pedroivovasconcelos.github.io/" />
+        <link rel="alternate" hreflang="pt-BR" href="https://pedroivovasconcelos.github.io/pt-br/" />
+        <link rel="alternate" hreflang="x-default" href="https://pedroivovasconcelos.github.io/" />
+      </>
+    )}
 
     <!-- OpenGraph Metadata -->
     <meta property="og:type" content="website" />

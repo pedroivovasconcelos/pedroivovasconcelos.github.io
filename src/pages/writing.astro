@@ -2,20 +2,32 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Technical Writing & Engineering Insights — Pedro Ivo Vasconcelos" description="Technical articles, architectural deep dives, and performance case studies by Pedro Ivo Vasconcelos on data platforms, query tuning, and applied AI.">
+<Layout title="Technical Writing & Architecture Notes — Pedro Ivo Vasconcelos" description="Technical executive summaries, architectural deep dives, and performance case studies by Pedro Ivo Vasconcelos on data platforms, query tuning, and applied AI.">
   <main id="conteudo" class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
-    <div class="section-heading" style="margin-bottom: 3rem;">
-      <p class="eyebrow">Engineering Insights</p>
+    <div class="section-heading" style="margin-bottom: 2rem;">
+      <p class="eyebrow">Engineering Insights · Architecture Summaries</p>
       <h1>Technical Writing & Architecture Notes</h1>
       <p>
         Deep dives into real-world database optimization, cloud warehouse storage efficiency, deterministic modeling, and agentic systems.
       </p>
     </div>
 
+    <div style="background: var(--surface-soft); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); margin-bottom: 3rem; max-width: 52rem;">
+      <strong style="color: var(--text); display: block; margin-bottom: 0.35rem; font-size: 0.95rem;">
+        📌 Architecture Summaries & Technical Briefs · Resumos Técnicos de Arquitetura
+      </strong>
+      <p style="color: var(--text-soft); font-size: 0.9rem; margin: 0; line-height: 1.5;">
+        The entries below are concise executive summaries and architectural findings derived from verified production benchmarks and software systems. Complete long-form research papers and empirical datasets will be published as dedicated standalone articles as each peer-review cycle is finalized.
+      </p>
+    </div>
+
     <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 52rem;">
       <!-- Article 1: Snowflake Cost & Storage -->
       <article class="card" style="padding: 2.5rem;">
-        <span class="eyebrow" style="color: var(--accent);">Cloud Data Warehousing · Cost Optimization</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="eyebrow" style="color: var(--accent); margin: 0;">Cloud Data Warehousing · Cost Optimization</span>
+          <span class="tag" style="background: var(--surface-soft); color: var(--accent); font-weight: 600; font-size: 0.75rem;">Executive Summary / Resumo</span>
+        </div>
         <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
           How We Cut Snowflake Cloud Storage by ~60% Through Clustering and Lifecycle Optimization
         </h2>
@@ -29,7 +41,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Article 2: PostgreSQL Performance -->
       <article class="card" style="padding: 2.5rem;">
-        <span class="eyebrow" style="color: var(--accent);">Database Performance · Query Tuning</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="eyebrow" style="color: var(--accent); margin: 0;">Database Performance · Query Tuning</span>
+          <span class="tag" style="background: var(--surface-soft); color: var(--accent); font-weight: 600; font-size: 0.75rem;">Executive Summary / Resumo</span>
+        </div>
         <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
           Bringing PostgreSQL p95 Query Latency Down to ~30ms: Indexing & Partitioning Realities
         </h2>
@@ -43,7 +58,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Article 3: Deterministic Simulation -->
       <article class="card" style="padding: 2.5rem;">
-        <span class="eyebrow" style="color: var(--accent);">Simulation · Systems Engineering</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="eyebrow" style="color: var(--accent); margin: 0;">Simulation · Systems Engineering</span>
+          <span class="tag" style="background: var(--surface-soft); color: var(--accent); font-weight: 600; font-size: 0.75rem;">Executive Summary / Resumo</span>
+        </div>
         <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
           Deterministic Orbital Mechanics in Pure Python: Lessons from CCT World Engine
         </h2>
@@ -57,7 +75,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Article 4: WebGL Games & PostMessage SDK -->
       <article class="card" style="padding: 2.5rem;">
-        <span class="eyebrow" style="color: var(--accent);">Computer Graphics · Web Architecture</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="eyebrow" style="color: var(--accent); margin: 0;">Computer Graphics · Web Architecture</span>
+          <span class="tag" style="background: var(--surface-soft); color: var(--accent); font-weight: 600; font-size: 0.75rem;">Executive Summary / Resumo</span>
+        </div>
         <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
           Building Zero-Friction WebGL 3D Games with Babylon.js and Isolated SDK Sandboxes
         </h2>
@@ -71,7 +92,10 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- Article 5: Model Context Protocol (MCP) -->
       <article class="card" style="padding: 2.5rem;">
-        <span class="eyebrow" style="color: var(--accent);">Applied AI · Agentic Protocols</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <span class="eyebrow" style="color: var(--accent); margin: 0;">Applied AI · Agentic Protocols</span>
+          <span class="tag" style="background: var(--surface-soft); color: var(--accent); font-weight: 600; font-size: 0.75rem;">Executive Summary / Resumo</span>
+        </div>
         <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
           Model Context Protocol (MCP) in Production: Bridging Agentic LLMs to Live Developer Toolchains
         </h2>
