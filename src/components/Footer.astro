@@ -1,16 +1,18 @@
 ---
 interface Props {
   isErrorPage?: boolean;
+  lang?: string;
 }
 
-const { isErrorPage = false } = Astro.props;
+const { isErrorPage = false, lang = "en" } = Astro.props;
+const isPt = lang.startsWith("pt");
 ---
 
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>© <span data-current-year>2026</span> Pedro Ivo Vasconcelos.</p>
     {!isErrorPage && (
-      <a href="#inicio">Voltar ao início <span aria-hidden="true">↑</span></a>
+      <a href="#inicio">{isPt ? "Voltar ao início" : "Back to top"} <span aria-hidden="true">↑</span></a>
     )}
   </div>
 </footer>

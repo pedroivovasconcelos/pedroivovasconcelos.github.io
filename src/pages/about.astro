@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Me — Pedro Ivo Vasconcelos | Engineering & Philosophy" description="Engineering background, control systems foundation from UFMG, and principles of Pedro Ivo Vasconcelos.">
+  <main id="conteudo" class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <div class="section-heading" style="margin-bottom: 3rem;">
+      <p class="eyebrow">Engineering Foundation</p>
+      <h1>About Pedro Ivo Vasconcelos</h1>
+      <p>
+        Building resilient data platforms, deterministic simulations, and applied AI architectures rooted in control theory and systems thinking.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 52rem;">
+      <article class="card" style="padding: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text);">Who I Am</h2>
+        <p style="color: var(--text-soft); line-height: 1.7; margin-bottom: 1.25rem;">
+          I am a <strong>Data Engineer</strong> based in Belo Horizonte, Brazil, operating at the intersection of modern cloud data warehousing, performance optimization, and autonomous software systems.
+        </p>
+        <p style="color: var(--text-soft); line-height: 1.7; margin-bottom: 1.25rem;">
+          Currently, I work on the <strong>Data Platform Engineering</strong> team at <strong>Playlist</strong> (formerly Mindbody), evolving and safeguarding analytical infrastructure connecting critical relational databases to high-performance cloud warehouses like Snowflake and Databricks.
+        </p>
+        <p style="color: var(--text-soft); line-height: 1.7; margin: 0;">
+          Previously at <strong>CI&T</strong>, I led technical initiatives that slashed Snowflake cloud storage spend by ~60% through clustering and lifecycle governance, and reduced p95 PostgreSQL query latency by up to ~90% (down to ~30ms) on heavy transactional systems.
+        </p>
+      </article>
+
+      <article class="card" style="padding: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text);">The UFMG Engineering Foundation</h2>
+        <p style="color: var(--text-soft); line-height: 1.7; margin-bottom: 1.25rem;">
+          I hold a Bachelor of Science in <strong>Control and Automation Engineering</strong> from the <strong>Universidade Federal de Minas Gerais (UFMG)</strong> — one of Latin America's premier engineering institutions.
+        </p>
+        <p style="color: var(--text-soft); line-height: 1.7; margin-bottom: 1.25rem;">
+          Control engineering taught me that software and data platforms are not just static code repositories; they are <em>dynamical systems with feedback loops</em>. In complex distributed data stacks:
+        </p>
+        <ul style="padding-left: 1.25rem; line-height: 1.7; color: var(--text-soft); display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+          <li><strong>Observability is feedback:</strong> Without precise telemetry and automated alerting, error states compound before corrective action can be taken.</li>
+          <li><strong>Stability requires damping:</strong> Surges in write throughput, batch ingestion, or query concurrency must be buffered and managed to prevent cascading pipeline failure.</li>
+          <li><strong>Determinism beats luck:</strong> Whether calculating celestial orbital mechanics in Python or validating analytical schema migrations, deterministic reproducibility is the only guarantee of reliability.</li>
+        </ul>
+      </article>
+
+      <article class="card" style="padding: 2.5rem;">
+        <h2 style="font-size: 1.5rem; margin-top: 0; margin-bottom: 1rem; color: var(--text);">Core Engineering Principles</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 1.5rem;">
+          <div style="background: var(--surface-soft); padding: 1.25rem; border-radius: var(--radius-md);">
+            <strong style="color: var(--text); display: block; margin-bottom: 0.5rem;">1. Radical Clarity</strong>
+            <p style="color: var(--text-soft); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Complex pipelines should make data simpler and decisions clearer, not bury consumers in ambiguous lineage.
+            </p>
+          </div>
+          <div style="background: var(--surface-soft); padding: 1.25rem; border-radius: var(--radius-md);">
+            <strong style="color: var(--text); display: block; margin-bottom: 0.5rem;">2. Empirical Verification</strong>
+            <p style="color: var(--text-soft); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Optimization claims require benchmarks. Test suites, query plan profiles, and latency distributions are the only proof.
+            </p>
+          </div>
+          <div style="background: var(--surface-soft); padding: 1.25rem; border-radius: var(--radius-md);">
+            <strong style="color: var(--text); display: block; margin-bottom: 0.5rem;">3. Privacy & Fail-Closed Security</strong>
+            <p style="color: var(--text-soft); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Protect credentials, personal identifiers, and financial data by default. Never expose unauthenticated bypasses.
+            </p>
+          </div>
+          <div style="background: var(--surface-soft); padding: 1.25rem; border-radius: var(--radius-md);">
+            <strong style="color: var(--text); display: block; margin-bottom: 0.5rem;">4. Systems Over Silos</strong>
+            <p style="color: var(--text-soft); font-size: 0.95rem; margin: 0; line-height: 1.5;">
+              Data models, infrastructure, developer tooling, and UI runtimes must function as a cohesive, resilient organism.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>

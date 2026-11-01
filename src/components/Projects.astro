@@ -6,41 +6,52 @@ import ProjectCard from './ProjectCard.astro';
   <div class="container">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Projetos em destaque</p>
-        <h2 id="projetos-title">Produtos com propósitos diferentes, unidos por clareza.</h2>
+        <p class="eyebrow">Featured Engineering Projects</p>
+        <h2 id="projetos-title">Autonomous Systems, Game Engines & Decision Platforms.</h2>
       </div>
       <p>
-        Uma seleção de experiências públicas desenvolvidas entre dados, IA e
-        interação.
+        A selection of verified, production-grade applications demonstrating architecture, automated testing, and software design.
       </p>
     </div>
 
     <div class="project-grid">
       <ProjectCard
         index="01"
-        type="Decisão · colaboração"
-        title="Farolio"
-        description="Um espaço colaborativo que transforma informações financeiras em decisões claras e próximas ações."
-        linkHref="https://farolio.vercel.app/"
-        linkText="Visitar Farolio"
+        type="Applied AI · Agentic Platform"
+        title="Quantorin AI"
+        description="Production control plane for autonomous multi-agent systems and creative tools. Built with Next.js 16 (Turbopack), Tailwind CSS, and verified execution receipts."
+        linkHref="https://quantorin-ai.vercel.app/"
+        linkText="Launch Quantorin AI"
         featured={true}
       />
       <ProjectCard
         index="02"
-        type="Viagens · IA"
-        title="SternaWay"
-        description="Planejamento de viagens com IA, com rotas que podem se tornar blueprints públicos e reutilizáveis."
-        linkHref="https://sternaway.vercel.app/"
-        linkText="Visitar SternaWay"
+        type="WebGL 3D · Canvas Engine"
+        title="Work & Slop Games"
+        description="Web-native 3D/2.5D game hub featuring Babylon.js 9.20.0, custom isometric physics, auto-hide HUD, and 259+ automated tests."
+        linkHref="https://workslop-games.vercel.app/"
+        linkText="Play Work & Slop"
       />
       <ProjectCard
         index="03"
-        type="Web · experiência"
-        title="SternaFly"
-        description="Uma aventura aérea 2.5D em pixel-voxel criada para a web."
-        linkHref="https://sternafly.web.app/"
-        linkText="Visitar SternaFly"
+        type="Simulation · Python Core"
+        title="CCT World Engine"
+        description="Deterministic orbital mechanics and planetary simulation engine in Python 3.12. Backed by 201/201 automated pytest tests."
+        linkHref="https://github.com/pedroivovasconcelos/cct-world-engine"
+        linkText="View on GitHub"
       />
+      <ProjectCard
+        index="04"
+        type="Analytics · Decision System"
+        title="Dióio Real Estate OS"
+        description="Multi-city property analytics and investment decision system with Supabase SSR, micro-location access reviews, and isolated demo mode."
+        linkHref="https://dioio.vercel.app/"
+        linkText="View Platform"
+      />
+    </div>
+
+    <div style="margin-top: 2.5rem; text-align: center;">
+      <a class="button button-primary" href="/projects/">Read In-Depth Architecture Case Studies →</a>
     </div>
   </div>
 </section>

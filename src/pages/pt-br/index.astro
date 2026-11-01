@@ -1,0 +1,239 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StudioCard from '../../components/StudioCard.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+---
+
+<Layout
+  title="Pedro Ivo Vasconcelos — Engenharia de Plataforma de Dados & IA Aplicada"
+  description="Pedro Ivo Vasconcelos — Engenheiro de Dados na Playlist (antiga Mindbody), graduado em Engenharia de Controle e Automação pela UFMG."
+  lang="pt-BR"
+>
+  <main id="conteudo">
+    <!-- Hero Section -->
+    <section class="hero section" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Engenharia de Plataforma de Dados · Confiabilidade · IA Aplicada</p>
+          <h1 id="hero-title">Construindo Plataformas de Dados Confiáveis e Sistemas de IA Aplicada.</h1>
+          <p class="hero-lead">
+            Sou <strong>Pedro Ivo Vasconcelos</strong>, <strong>Engenheiro de Dados</strong> na equipe de Data Platform Engineering da <strong>Playlist</strong> (antiga Mindbody).
+            Especializado em data warehouses analíticos escaláveis (Snowflake, Databricks), esteiras de dados automatizadas, governança de custo e sistemas de agentes autônomos.
+          </p>
+          <div class="hero-highlights">
+            <div class="highlight-chip">
+              <strong>~60%</strong> Redução de armazenamento Snowflake (CI&T)
+            </div>
+            <div class="highlight-chip">
+              <strong>~30 ms</strong> Latência p95 PostgreSQL (CI&T)
+            </div>
+            <div class="highlight-chip">
+              <strong>UFMG</strong> Engenharia de Controle e Automação
+            </div>
+          </div>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/resume/">Ver Currículo / CV</a>
+            <a class="button button-secondary" href="#projetos">Explorar Projetos</a>
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/pedro-ivo-vasconcelos-bb4632a5/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn ↗
+            </a>
+          </div>
+        </div>
+
+        <StudioCard />
+      </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="section section-muted" id="sobre" aria-labelledby="sobre-title">
+      <div class="container split-layout">
+        <div>
+          <p class="eyebrow">Trajetória e Fundamentos</p>
+          <h2 id="sobre-title">De Data Warehouses Escaláveis a Sistemas Autônomos Aplicados.</h2>
+        </div>
+        <div class="body-copy">
+          <p>
+            Sou <strong>Engenheiro de Dados</strong> sediado em Belo Horizonte, com formação acadêmica em <strong>Engenharia de Controle e Automação pela UFMG</strong>.
+            Minha atuação técnica foca na concepção de pipelines resilientes, modelagem analítica e otimização empírica de banco de dados.
+          </p>
+          <p>
+            Atualmente na <strong>Playlist</strong> (antiga Mindbody), atuo na equipe de <strong>Data Platform Engineering</strong>, evoluindo a infraestrutura analítica que conecta bases relacionais como SQL Server e SSIS a data warehouses em nuvem como Snowflake e Databricks.
+          </p>
+          <p>
+            No estúdio <strong>Quantorin</strong>, desenvolvo simuladores determinísticos e orquestradores multi-agente integrando o Model Context Protocol (MCP) e modelos de linguagem modernos com testes automatizados.
+          </p>
+          <div class="about-actions" style="margin-top: 1.5rem;">
+            <a class="button button-secondary" href="/experience/">Histórico Profissional →</a>
+            <a class="button button-secondary" href="/skills/">Matriz de Competências →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projetos Section -->
+    <section class="section" id="projetos" aria-labelledby="projetos-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Projetos em Destaque</p>
+            <h2 id="projetos-title">Sistemas Autônomos, Motores WebGL e Plataformas de Decisão.</h2>
+          </div>
+          <p>
+            Projetos reais com código aberto, validação por testes automatizados e deploy em produção.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <ProjectCard
+            index="01"
+            type="IA Aplicada · Plataforma de Agentes"
+            title="Quantorin AI"
+            description="Painel de controle para agentes autônomos e ferramentas criativas com Next.js 16 (Turbopack), Tailwind CSS e recibos imutáveis de execução."
+            linkHref="https://quantorin-ai.vercel.app/"
+            linkText="Abrir Quantorin AI"
+            featured={true}
+          />
+          <ProjectCard
+            index="02"
+            type="WebGL 3D · Plataforma de Jogos"
+            title="Work & Slop Games"
+            description="Hub de jogos 3D/2.5D no navegador com Babylon.js 9.20.0, HUD integrado, física arcade e mais de 259 testes automatizados."
+            linkHref="https://workslop-games.vercel.app/"
+            linkText="Jogar Work & Slop"
+          />
+          <ProjectCard
+            index="03"
+            type="Simulação · Python Puro"
+            title="CCT World Engine"
+            description="Motor determinístico de mecânica orbital e ciclos sazonais em Python 3.12, verificado com 201 suítes de teste pytest."
+            linkHref="https://github.com/pedroivovasconcelos/cct-world-engine"
+            linkText="Ver no GitHub"
+          />
+          <ProjectCard
+            index="04"
+            type="Inteligência Imobiliária · Decisão"
+            title="Dióio Real Estate OS"
+            description="Plataforma de inteligência imobiliária com comparador financeiro (CAIXA vs. Consórcio), Supabase SSR e modo demonstrativo isolado."
+            linkHref="https://dioio.vercel.app/"
+            linkText="Ver Plataforma"
+          />
+        </div>
+
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a class="button button-primary" href="/projects/">Estudos de Caso e Arquitetura Detalhada →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Atuação Section -->
+    <section class="section section-dark" id="atuacao" aria-labelledby="atuacao-title">
+      <div class="container">
+        <div class="section-heading section-heading-dark">
+          <div>
+            <p class="eyebrow">Disciplinas Centrais</p>
+            <h2 id="atuacao-title">Engenharia Rigorosa em Plataformas de Dados e IA.</h2>
+          </div>
+          <p>
+            Arquiteturas projetadas para escala, tolerância a falhas e saídas matematicamente verificáveis.
+          </p>
+        </div>
+
+        <div class="capability-grid">
+          <article>
+            <span aria-hidden="true">01</span>
+            <h3>Plataformas de Dados & Warehousing</h3>
+            <p>Arquitetura Snowflake e Databricks com governança de ciclo de vida e otimização de custo de armazenamento.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <h3>Confiabilidade & Performance</h3>
+            <p>Otimização de planos de execução (até 90% de ganho de latência em PostgreSQL), particionamento e testes de dados.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">03</span>
+            <h3>IA Aplicada & Redes de Agentes</h3>
+            <p>Integração de servidores Model Context Protocol (MCP), chamadas de ferramenta com LLMs e guardrails de segurança.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">04</span>
+            <h3>Engenharia de Sistemas & Web</h3>
+            <p>Aplicações modernas em TypeScript, Next.js, Babylon.js e Python com esteiras completas de CI/CD.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Princípios Section -->
+    <section class="section" aria-labelledby="principios-title">
+      <div class="container principles-layout">
+        <div class="principles-intro">
+          <p class="eyebrow">Como eu trabalho</p>
+          <h2 id="principios-title">Quatro princípios para construir melhor.</h2>
+        </div>
+        <ol class="principles-list">
+          <li>
+            <span>Clareza</span>
+            <p>Tecnologia deve tornar decisões e experiências mais simples.</p>
+          </li>
+          <li>
+            <span>Iteração</span>
+            <p>Protótipos existem para aprender, validar e evoluir.</p>
+          </li>
+          <li>
+            <span>Responsabilidade</span>
+            <p>Privacidade, segurança e contexto fazem parte do produto.</p>
+          </li>
+          <li>
+            <span>Visão de produto</span>
+            <p>Código, design e operação precisam funcionar como um sistema.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section class="section contact-section" id="contato" aria-labelledby="contato-title">
+      <div class="container contact-card">
+        <p class="eyebrow">Conexão & Oportunidades</p>
+        <h2 id="contato-title">Buscando um Engenheiro de Plataforma de Dados ou IA?</h2>
+        <p>
+          Aberto para discutir oportunidades em Engenharia de Plataforma de Dados, Confiabilidade e IA Aplicada.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+          <a
+            class="button button-light"
+            href="https://www.linkedin.com/in/pedro-ivo-vasconcelos-bb4632a5/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conectar no LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="button button-secondary"
+            href="https://github.com/pedroivovasconcelos"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: white; border-color: rgba(255, 255, 255, 0.4);"
+          >
+            Perfil no GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="button button-secondary"
+            href="/resume/"
+            style="color: white; border-color: rgba(255, 255, 255, 0.4);"
+          >
+            Ver Currículo Completo
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

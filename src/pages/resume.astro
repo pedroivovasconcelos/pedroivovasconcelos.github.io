@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Resume / CV — Pedro Ivo Vasconcelos | Data Platform & AI Engineer" description="ATS-friendly professional resume of Pedro Ivo Vasconcelos: Data Engineer at Playlist (formerly Mindbody), verified CI&T achievements, and UFMG degree.">
+  <main id="conteudo" class="container resume-page" style="padding-top: 2.5rem; padding-bottom: 5rem;">
+    <!-- Print / Action Bar -->
+    <div class="no-print" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <a href="/" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 500;">← Back to Home</a>
+      </div>
+      <div style="display: flex; gap: 0.75rem;">
+        <button id="print-btn" onclick="window.print()" class="btn" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1.25rem; font-weight: 600; border-radius: 0.5rem; background: var(--accent); color: #ffffff; border: none;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Print / Save as PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Resume Document Container -->
+    <article class="resume-sheet card" style="padding: 3rem; max-width: 52rem; margin: 0 auto; background: var(--surface);">
+      <!-- Header -->
+      <header style="border-bottom: 2px solid var(--line); padding-bottom: 1.5rem; margin-bottom: 1.75rem;">
+        <h1 style="font-size: 2.25rem; margin: 0 0 0.25rem 0; color: var(--text);">Pedro Ivo Vasconcelos</h1>
+        <p style="font-size: 1.2rem; font-weight: 600; color: var(--accent); margin: 0 0 0.75rem 0;">
+          Data Engineer | Data Platforms, Reliability & Applied AI
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.9rem; color: var(--text-soft);">
+          <span>📍 Belo Horizonte, Brazil (Remote)</span>
+          <a href="https://linkedin.com/in/pedroivovasconcelos" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">linkedin.com/in/pedroivovasconcelos</a>
+          <a href="https://github.com/pedroivovasconcelos" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">github.com/pedroivovasconcelos</a>
+          <a href="https://pedroivovasconcelos.github.io" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">pedroivovasconcelos.github.io</a>
+        </div>
+      </header>
+
+      <!-- Professional Summary -->
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; margin-bottom: 0.75rem;">
+          Professional Summary
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin: 0;">
+          Data Engineer with a background in Control and Automation Engineering from UFMG. Specializes in analytical data platforms, high-throughput cloud warehousing, automated pipeline governance, and query optimization. Track record includes cutting Snowflake cloud storage by ~60% and reducing PostgreSQL p95 query latency by up to ~90% (to ~30ms) at CI&T, as well as evolving enterprise analytical infrastructure at Playlist (formerly Mindbody). Active builder in applied AI systems, deterministic simulation, and Model Context Protocol (MCP) integrations.
+        </p>
+      </section>
+
+      <!-- Work Experience -->
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; margin-bottom: 1.25rem;">
+          Experience
+        </h2>
+
+        <!-- Role 1: Playlist -->
+        <div style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+            <strong style="font-size: 1.1rem; color: var(--text);">Data Engineer</strong>
+            <span style="font-size: 0.9rem; color: var(--text-soft);">Belo Horizonte, Brazil (Remote)</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.5rem;">
+            <span style="font-weight: 600; color: var(--accent);">Playlist (formerly Mindbody) · Data Platform Engineering</span>
+            <span style="font-size: 0.85rem; color: var(--text-soft);">Recent</span>
+          </div>
+          <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.6; color: var(--text-soft); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.95rem;">
+            <li>Architect and maintain analytical data platform infrastructure supporting enterprise-wide reporting and intelligence.</li>
+            <li>Maintain data ingestion pipelines connecting relational transactional systems (SQL Server, SSIS) to modern cloud data warehouses (Snowflake, Databricks).</li>
+            <li>Implement automated pipeline health checks, schema evolution governance, and alerting for analytical reliability.</li>
+            <li>Collaborate with cross-functional analytics and engineering stakeholders to deliver reliable, governed dimensional data models.</li>
+          </ul>
+        </div>
+
+        <!-- Role 2: CI&T -->
+        <div style="margin-bottom: 1.75rem;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+            <strong style="font-size: 1.1rem; color: var(--text);">Data Engineer / Software Engineer</strong>
+            <span style="font-size: 0.9rem; color: var(--text-soft);">Brazil</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.5rem;">
+            <span style="font-weight: 600; color: var(--accent);">CI&T</span>
+            <span style="font-size: 0.85rem; color: var(--text-soft);">Prior Track Record</span>
+          </div>
+          <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.6; color: var(--text-soft); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.95rem;">
+            <li><strong>Reduced Snowflake Cloud Storage by ~60%:</strong> Conducted an audit of cloud data storage, restructuring clustering keys, partition logic, and data retention policies to significantly cut cloud storage spend.</li>
+            <li><strong>Reduced PostgreSQL Query Latency by up to 90%:</strong> Redesigned indexing strategies, query execution plans, and table partitions on heavy transactional datasets, reducing p95 query latency down to ~30 ms.</li>
+            <li>Engineered robust automated ETL pipelines using Python and SQL with comprehensive unit and integration testing suites.</li>
+            <li>Established continuous integration and deployment (CI/CD) pipelines for reliable database migrations.</li>
+          </ul>
+        </div>
+
+        <!-- Role 3: Quantorin -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+            <strong style="font-size: 1.1rem; color: var(--text);">Systems & Applied AI Engineer</strong>
+            <span style="font-size: 0.9rem; color: var(--text-soft);">Belo Horizonte, Brazil</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem; margin-bottom: 0.5rem;">
+            <span style="font-weight: 600; color: var(--accent);">Quantorin Research Lab</span>
+            <span style="font-size: 0.85rem; color: var(--text-soft);">Technical Lab</span>
+          </div>
+          <ul style="padding-left: 1.25rem; margin: 0; line-height: 1.6; color: var(--text-soft); display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.95rem;">
+            <li>Architected <strong>Quantorin AI</strong>, an agentic control plane and evaluation platform built on Next.js 16 and Model Context Protocol (MCP) servers.</li>
+            <li>Developed <strong>Work & Slop Games</strong>, a Babylon.js 9.20 WebGL 3D game engine platform verified with 259+ automated tests and isolated postMessage SDKs.</li>
+            <li>Authored <strong>CCT World Engine</strong>, a deterministic Python astronomical mechanics and orbital simulator backed by 201 pytest suites.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; margin-bottom: 0.75rem;">
+          Education
+        </h2>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.25rem;">
+          <div>
+            <strong style="color: var(--text);">Bachelor of Science in Control and Automation Engineering</strong>
+            <div style="color: var(--text-soft);">Universidade Federal de Minas Gerais (UFMG)</div>
+          </div>
+          <span style="font-size: 0.9rem; color: var(--text-soft);">Belo Horizonte, Brazil</span>
+        </div>
+        <p style="color: var(--text-soft); font-size: 0.9rem; margin-top: 0.35rem; line-height: 1.5;">
+          Rigorous foundation in dynamical systems, feedback control loops, real-time computing, linear algebra, numerical optimization, and discrete event modeling.
+        </p>
+      </section>
+
+      <!-- Skills Matrix -->
+      <section>
+        <h2 style="font-size: 1.15rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text); border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; margin-bottom: 0.75rem;">
+          Technical Skills
+        </h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; font-size: 0.9rem;">
+          <div>
+            <strong style="color: var(--text); display: block; margin-bottom: 0.25rem;">Data Warehouses & DBs:</strong>
+            <span style="color: var(--text-soft);">Snowflake, Databricks, PostgreSQL, SQL Server, BigQuery, Supabase</span>
+          </div>
+          <div>
+            <strong style="color: var(--text); display: block; margin-bottom: 0.25rem;">Languages:</strong>
+            <span style="color: var(--text-soft);">Python (Pandas, PySpark, Pytest), SQL (Advanced), TypeScript, JavaScript</span>
+          </div>
+          <div>
+            <strong style="color: var(--text); display: block; margin-bottom: 0.25rem;">Pipelines & Cloud:</strong>
+            <span style="color: var(--text-soft);">Fivetran, SSIS, Airflow, dbt, AWS, Docker, CI/CD, Git</span>
+          </div>
+          <div>
+            <strong style="color: var(--text); display: block; margin-bottom: 0.25rem;">Applied AI & Systems:</strong>
+            <span style="color: var(--text-soft);">Model Context Protocol (MCP), LLM Tooling, Next.js 16, Babylon.js</span>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+</Layout>
+
+<style>
+  @media print {
+    .no-print,
+    .site-header,
+    .site-footer,
+    .skip-link {
+      display: none !important;
+    }
+
+    body {
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    .resume-page {
+      padding: 0 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    .resume-sheet {
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      background: #ffffff !important;
+      color: #000000 !important;
+    }
+
+    h1, h2, strong {
+      color: #000000 !important;
+    }
+
+    p, span, li, div {
+      color: #333333 !important;
+    }
+
+    a {
+      color: #000000 !important;
+      text-decoration: none !important;
+    }
+  }
+</style>

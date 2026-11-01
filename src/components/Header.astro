@@ -3,33 +3,55 @@ import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
   isErrorPage?: boolean;
+  lang?: string;
 }
 
-const { isErrorPage = false } = Astro.props;
+const { isErrorPage = false, lang = "en" } = Astro.props;
+const isPt = lang.startsWith("pt");
+const isRoot = Astro.url.pathname === "/" || Astro.url.pathname === "";
 ---
 
 <header class="site-header">
   <div class="container header-inner">
-    {isErrorPage ? (
-      <a class="brand" href="/" aria-label="Pedro Ivo Vasconcelos — página inicial">
-        <span class="brand-mark" aria-hidden="true">PI</span>
-        <span>Pedro Ivo</span>
-      </a>
-    ) : (
-      <a class="brand" href="#inicio" aria-label="Pedro Ivo Vasconcelos — início">
-        <span class="brand-mark" aria-hidden="true">PI</span>
-        <span>Pedro Ivo</span>
-      </a>
-    )}
+    <a class="brand" href={isPt ? "/pt-br/" : "/"} aria-label="Pedro Ivo Vasconcelos — Home">
+      <span class="brand-mark" aria-hidden="true">PI</span>
+      <span>Pedro Ivo</span>
+    </a>
 
     {isErrorPage ? (
       <ThemeToggle />
     ) : (
-      <nav class="main-nav" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#atuacao">Atuação</a>
-        <a href="#contato">Contato</a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        {isRoot ? (
+          <>
+            <a href="#sobre">{isPt ? "Sobre" : "About"}</a>
+            <a href="#projetos">{isPt ? "Projetos" : "Projects"}</a>
+            <a href="/experience/">{isPt ? "Experiência" : "Experience"}</a>
+            <a href="/skills/">{isPt ? "Competências" : "Skills"}</a>
+            <a href="/resume/">{isPt ? "Currículo" : "Resume"}</a>
+            <a href="/writing/">{isPt ? "Artigos" : "Writing"}</a>
+            <a href="#contato">{isPt ? "Contato" : "Contact"}</a>
+          </>
+        ) : (
+          <>
+            <a href="/">{isPt ? "Início" : "Home"}</a>
+            <a href="/experience/">{isPt ? "Experiência" : "Experience"}</a>
+            <a href="/projects/">{isPt ? "Projetos" : "Projects"}</a>
+            <a href="/skills/">{isPt ? "Competências" : "Skills"}</a>
+            <a href="/resume/">{isPt ? "Currículo" : "Resume"}</a>
+            <a href="/writing/">{isPt ? "Artigos" : "Writing"}</a>
+            <a href="/contact/">{isPt ? "Contato" : "Contact"}</a>
+          </>
+        )}
+
+        <div class="lang-switch" aria-label="Language Switch">
+          {isPt ? (
+            <a href="/" class="lang-btn" title="English Version">EN</a>
+          ) : (
+            <a href="/pt-br/" class="lang-btn" title="Versão em Português">PT</a>
+          )}
+        </div>
+
         <ThemeToggle />
       </nav>
     )}

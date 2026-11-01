@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Technical Writing & Engineering Insights — Pedro Ivo Vasconcelos" description="Technical articles, architectural deep dives, and performance case studies by Pedro Ivo Vasconcelos on data platforms, query tuning, and applied AI.">
+  <main id="conteudo" class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <div class="section-heading" style="margin-bottom: 3rem;">
+      <p class="eyebrow">Engineering Insights</p>
+      <h1>Technical Writing & Architecture Notes</h1>
+      <p>
+        Deep dives into real-world database optimization, cloud warehouse storage efficiency, deterministic modeling, and agentic systems.
+      </p>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 2.5rem; max-width: 52rem;">
+      <!-- Article 1: Snowflake Cost & Storage -->
+      <article class="card" style="padding: 2.5rem;">
+        <span class="eyebrow" style="color: var(--accent);">Cloud Data Warehousing · Cost Optimization</span>
+        <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
+          How We Cut Snowflake Cloud Storage by ~60% Through Clustering and Lifecycle Optimization
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+          An empirical breakdown of storage bloat in analytical warehouses. Covers how redundant transient micro-partitions, unoptimized Time Travel retention windows, and missing clustering keys inflated monthly bills, and the exact governance strategy used to reclaim ~60% of cloud storage capacity at CI&T.
+        </p>
+        <div style="background: var(--surface-soft); padding: 1rem 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-soft);">
+          <strong>Key Takeaway:</strong> Auditing table fail-safe retention, converting staging tables to transient, and clustering by query prune paths yield immediate compound cost reductions without impacting query latency.
+        </div>
+      </article>
+
+      <!-- Article 2: PostgreSQL Performance -->
+      <article class="card" style="padding: 2.5rem;">
+        <span class="eyebrow" style="color: var(--accent);">Database Performance · Query Tuning</span>
+        <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
+          Bringing PostgreSQL p95 Query Latency Down to ~30ms: Indexing & Partitioning Realities
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+          Investigating slow sequential scans and index bloat on high-write relational tables. Examines `EXPLAIN (ANALYZE, BUFFERS)` execution plans, partial composite index design, table range partitioning, and autovacuum tuning that brought 95th-percentile query response times from multi-second spikes down to ~30 milliseconds.
+        </p>
+        <div style="background: var(--surface-soft); padding: 1rem 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-soft);">
+          <strong>Key Takeaway:</strong> Indexes that match predicate selectivity rather than full-column coverage drastically shrink buffer cache footprint and eliminate sequential disk reads.
+        </div>
+      </article>
+
+      <!-- Article 3: Deterministic Simulation -->
+      <article class="card" style="padding: 2.5rem;">
+        <span class="eyebrow" style="color: var(--accent);">Simulation · Systems Engineering</span>
+        <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
+          Deterministic Orbital Mechanics in Pure Python: Lessons from CCT World Engine
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+          Building an orbital and seasonal simulation engine without floating-point drift across platforms. Details the implementation of Keplerian barycentric physics, multi-calendar synchronization, and pytest validation suites verifying astronomical ephemeris across millennial simulation scales.
+        </p>
+        <div style="background: var(--surface-soft); padding: 1rem 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-soft);">
+          <strong>Key Takeaway:</strong> Determinism is achieved by fixing time step discretizations and isolating transcendental float approximations into normalized unit intervals.
+        </div>
+      </article>
+
+      <!-- Article 4: WebGL Games & PostMessage SDK -->
+      <article class="card" style="padding: 2.5rem;">
+        <span class="eyebrow" style="color: var(--accent);">Computer Graphics · Web Architecture</span>
+        <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
+          Building Zero-Friction WebGL 3D Games with Babylon.js and Isolated SDK Sandboxes
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+          How Work & Slop Games delivers 11 browser-native 3D arcade games with zero layout friction. Highlights include 100dvh full-bleed canvas rendering, auto-hiding navigation bars, WebGL context loss recovery, and a strict postMessage isolation boundary that prevents game runtimes from leaking state to the host application.
+        </p>
+        <div style="background: var(--surface-soft); padding: 1rem 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-soft);">
+          <strong>Key Takeaway:</strong> Treating interactive canvas viewports as self-contained micro-applications with explicit message contracts eliminates DOM interference and ensures rock-solid 60 FPS performance.
+        </div>
+      </article>
+
+      <!-- Article 5: Model Context Protocol (MCP) -->
+      <article class="card" style="padding: 2.5rem;">
+        <span class="eyebrow" style="color: var(--accent);">Applied AI · Agentic Protocols</span>
+        <h2 style="font-size: 1.5rem; margin-top: 0.25rem; margin-bottom: 0.75rem; color: var(--text);">
+          Model Context Protocol (MCP) in Production: Bridging Agentic LLMs to Live Developer Toolchains
+        </h2>
+        <p style="color: var(--text-soft); line-height: 1.6; margin-bottom: 1.25rem;">
+          Moving beyond brittle custom function calling. Examines how the Model Context Protocol standardizes agent interaction with databases, Git repositories, and cloud control planes while enforcing fail-closed security gates, audit trails, and zero unauthorized state mutations.
+        </p>
+        <div style="background: var(--surface-soft); padding: 1rem 1.25rem; border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-soft);">
+          <strong>Key Takeaway:</strong> Autonomous agents require protocol-level authorization boundaries and immutable audit logs before they can be safely trusted in production environments.
+        </div>
+      </article>
+    </div>
+  </main>
+</Layout>
